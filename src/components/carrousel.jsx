@@ -54,13 +54,11 @@ export function Carrousel() {
   };
 
   return (
-    <div>
+    <div className="Images">
+              <Arrow is_left={true} callback={TimelineChanged}></Arrow>
         {previousImageText}
-      {currentImageText}
-      <div>
-        <Arrow is_left={true} callback={TimelineChanged}></Arrow>
-        <Arrow is_left={false} callback={TimelineChanged}></Arrow>
-      </div>
+        {currentImageText}
+                <Arrow is_left={false} callback={TimelineChanged}></Arrow>
     </div>
   );
 }

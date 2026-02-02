@@ -1,8 +1,12 @@
 
 function ImageText({img_path, description = ""}){
     return  <>
-        <img src={img_path}></img>
-        <p1>{description}</p1>   
+       <div>
+         <img src={img_path}></img>
+       </div>
+        <div className="Description">
+            <p1>{description}</p1>   
+        </div>
     </>
 }
 export default ImageText
