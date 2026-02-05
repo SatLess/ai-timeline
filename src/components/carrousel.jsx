@@ -1,6 +1,5 @@
 import Arrow from "./arrow";
 import ImageText from "./image_text";
-import React, { useState } from "react";
 
 function CreateItemDescrpition(img_path, description, id) {
   return {
@@ -11,53 +10,26 @@ function CreateItemDescrpition(img_path, description, id) {
 }
 
 let timeline = [
-  CreateItemDescrpition("src/assets/react.svg", "Antes", 0),
-  CreateItemDescrpition("src/assets/react.svg", "Focado", 1),
+  CreateItemDescrpition("src/assets/s.jpeg", "Antes o mundo neoliberal se encontrava\n em uma safadeza sem tamanhos", 0),
+  CreateItemDescrpition("src/assets/images.jpeg", "Focado", 1),
   CreateItemDescrpition("src/assets/react.svg", "Depois", 2),
   CreateItemDescrpition("src/assets/react.svg", "Later", 3),
+    CreateItemDescrpition("src/assets/react.svg", "Depois", 4),
+  CreateItemDescrpition("src/assets/react.svg", "Later", 5),
+    CreateItemDescrpition("src/assets/react.svg", "Depois", 6),
+  CreateItemDescrpition("src/assets/react.svg", "Later", 7),
 ];
 
-let current_idx = 0;
-
 export function Carrousel() {
-  const [currentImageText, setCurrentImage] = useState(
-    <ImageText
-      img_path={timeline[current_idx].img_path}
-      description={timeline[current_idx].description}
-    />,
-  );
-
-    const [previousImageText, setPreviousImage] = useState(
-        null
-  ); 
-
-  const TimelineChanged = (offset) => {
-    let new_idx = current_idx + offset
-    if (new_idx < 0 || new_idx === timeline.length){
-        return
-    }
-    console.log(new_idx)
-    setPreviousImage(
-        new_idx <= 0 ? null :
-      <ImageText
-        img_path={timeline[current_idx].img_path}
-        description={timeline[current_idx].description}
-      />,
-    )
-    current_idx = new_idx
-    setCurrentImage(
-      <ImageText
-        img_path={timeline[current_idx].img_path}
-        description={timeline[current_idx].description}
-      />,
-    );
-  };
+  let items = timeline.map(item => <ImageText key = {item.key} img_path={item.img_path} description= {item.description}/>)
+  const TimelineChanged = () => {}
 
   return (
-    <div className="Images">
+    <div className="Container">
               <Arrow is_left={true} callback={TimelineChanged}></Arrow>
-        {previousImageText}
-        {currentImageText}
+              <div className="Images">
+                {items}
+              </div>
                 <Arrow is_left={false} callback={TimelineChanged}></Arrow>
     </div>
   );
