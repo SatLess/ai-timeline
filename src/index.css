@@ -1,28 +1,49 @@
 
-.Images {
+.Container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.Images #l_arrow {
+.Container #l_arrow {
   position: absolute;
   left: 0;
   margin: 5%;
 }
 
-.Images #r_arrow {
+.Container #r_arrow {
   position: absolute;
   right: 0;
   margin: 5%;
 }
 
-.Images .Description {
+.Container .Description {
   background-color: bisque;
   margin: 25px;
   width: 20%;
   text-align: justify;
+}
+
+.Images {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+}
+
+.Images::after{
+  background-color: black;
+  position: absolute;
+  content: '';
+  width: 1200px;
+  height: 4px;
+  bottom: 35%;
+}
+
+.Images .Card {
+  padding-left: 50%;
 }
 
 /* :root {
