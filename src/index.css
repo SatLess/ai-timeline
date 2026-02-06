@@ -1,4 +1,17 @@
 
+@keyframes movingBackground {
+  from {background-position: 0 0;} to {background-position: 100vw 50vh;}
+}
+
+html{
+ /*background: repeating-linear-gradient(90deg, #24292e, #24292e 30px, #2b3137 30px, #2b3137 60px);*/
+  background-size: 100% 100%;
+  animation: movingBackground;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 .Container {
   display: flex;
   justify-content: center;
@@ -18,13 +31,6 @@
   margin: 5%;
 }
 
-.Container .Description {
-  background-color: bisque;
-  margin: 25px;
-  width: 20%;
-  text-align: justify;
-}
-
 .Images {
   display: flex;
   gap: 50px;
@@ -33,17 +39,36 @@
   overflow-x: scroll;
 }
 
+.Images::-webkit-scrollbar {
+  display: none;
+}
+
 .Images::after{
   background-color: black;
   position: absolute;
   content: '';
   width: 1200px;
   height: 4px;
-  bottom: 35%;
+  margin-top: 222px;
+  bottom: 30%;
 }
 
 .Images .Card {
-  padding-left: 50%;
+  display: flex;
+  padding-left: 30%;
+  justify-content: center;
+  align-items: center;
+  min-width: 50vw;
+  max-width: 50vw;
+
+}
+.Images .Card .Img {
+  max-width: 400px;
+}
+.Images .Card .Description {
+  margin: 25px;
+  min-width: 250px;
+  text-align:inherit;
 }
 
 /* :root {

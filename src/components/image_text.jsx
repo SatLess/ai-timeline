@@ -2,8 +2,11 @@
 function ImageText({img_path, description = ""}){
     return  <>
        <div>
-         <img src={img_path}></img>
+         <img className="Img" src={img_path}></img>
        </div>
+               <div className="Date">
+            <p1>2020</p1>   
+        </div>
         <div className="Description">
             <p1>{description}</p1>   
         </div>

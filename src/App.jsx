@@ -12,10 +12,3 @@ function App() {
 
 export default App;
 
-// doar igualdade
-// tech for elders
-// project iris
-
-/*
- *
- */
