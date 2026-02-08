@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Arrow from "./arrow";
 import ImageText from "./image_text";
 import fs from "node:fs"
@@ -16,25 +16,29 @@ let r = await fetch("src/assets/timeline_data.json")
 let timeline = await r.json()
 
 export function Carrousel() {
+
+  const [current_idx, setIdx] = useState(0)
+  const carrousel_div = useRef(null)
+
   let items = timeline.map(item => 
   <div className="Card">
     <ImageText key = {item.id} img_path={item.img_path} description= {item.description} date={item.date}/>
   </div>)
-  
-  const carrousel_div = useRef(null)
+
   const TimelineChanged = (offset) => {
     let scrollOfsset = carrousel_div.current.scrollLeft + carrousel_div.current.offsetWidth * offset
     scrollOfsset = (offset < 0) ? Math.floor(scrollOfsset/1200.0) * 1200 : Math.ceil(scrollOfsset/1200.0) * 1200
+    setIdx(scrollOfsset / 1200)
     carrousel_div.current.scrollLeft = scrollOfsset
   }
 
   return (
     <div className="Container">
-              <Arrow is_left={true} callback={TimelineChanged}></Arrow>
+              {current_idx > 0 && <Arrow is_left={true} callback={TimelineChanged}></Arrow>}
               <div className="Images" ref={carrousel_div}>
                 {items}
               </div>
-                <Arrow is_left={false} callback={TimelineChanged}></Arrow>
+              {current_idx !== timeline.length - 1 &&<Arrow is_left={false} callback={TimelineChanged}></Arrow>}
                 <hr></hr>
     </div>
   );
