@@ -1,0 +1,38 @@
+[
+ 
+    {
+        "id": 1,
+        "img_path": "src/assets/robo-ed.jpeg",
+        "description": "Desenvolvida pela InBot, Robô ED é um dos primeiros chatbots brasileiros a utilizar técnicas de IA, como aprendizado de máquina e processamento de linguagem natural. Foi criado com o objetivo de falar sobre uso racional de energia e meio ambiente.",
+        "date": "2004"
+    },     
+    
+    {
+        "id": 2,
+        "img_path": "src/assets/facebook.jpeg",
+        "description": "Facebook (atualmente chamada de Meta) utilizava de visão computacional para identificar rostos e marcar amigos em fotos automaticamente.",
+        "date": "2010"
+    },   
+
+    {
+        "id": 3,
+        "img_path": "src/assets/snapchat.jpeg",
+        "description": "A startup Looksery, especializada em rastramento e modificação facial, foi adquirida pelo Snapchat por US$ 150 milhões. Com isso introduziu Lenses, tecnologia responsável pelos filtros de realidade aumentada.",
+        "date": "2015"
+    },
+    
+    {
+        "id": 4,
+        "img_path": "src/assets/youtube.jpeg",
+        "description": "Assim como outros produtos da Google, Youtube começa a utilizar deep learning (aprendizado profundo) em seus algorítimos para busca e ranking de vídeos sugeridos ao usuário, superando táticas antes utilizadas de aprendizado de máquina e fatorização de matrizes.",
+        "date": "2016"
+    },
+
+    {
+        "id": 5,
+        "img_path": "src/assets/gpt-3.jpeg",
+        "description": "Com mais de 17 bilhões de parâmetros, GPT-3 foi criado, sendo capaz de gerar texto natural e humanizado — e portanto sendo utilizado para criação de artigos, poesia e histórias. Além disso, é utilizado para geração de código de programação e imagens.",
+        "date": "2020"
+    }
+    
+]

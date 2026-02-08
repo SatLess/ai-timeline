@@ -1,15 +1,15 @@
 
 function ImageText({img_path, description = "", date}){
     return  <>
-       <div>
+       <div className="ImageContainer">
          <img className="Img" src={img_path}></img>
        </div>
-               <div className="Date">
+            <div className="Date">
             <p1>{date}</p1>
-            <img src="src\assets\react.svg"></img>   
+            <img src="src\assets\circle.svg"></img>   
         </div>
         <div className="Description">
-            <p1>{description}</p1>   
+            <span>{description}</span>   
         </div>
     </>
 }

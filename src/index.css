@@ -3,9 +3,15 @@
   from {background-position: 0 0;} to {background-position: 100vw 50vh;}
 }
 
+@keyframes movingButton {
+  from, to {transform: scale(1,1);}
+  25% {transform: scale(0.9,1.1);}
+  50% {transform: scale(1.1,0.9);}
+  75% {transform: scale(.95,1.05);}   
+}
+
 html{
  background: repeating-linear-gradient(90deg, #24292e, #24292e 20px, #2b3137 20px, #2b3137 40px);
-  background-size: 100% 100%;
   animation: movingBackground;
   animation-duration: 75s;
   animation-iteration-count: infinite;
@@ -31,6 +37,10 @@ h1, h2 {
   left: 0;
   margin: 5%;
   z-index: 1;
+  width: 64px;
+  height: 64px;
+  background: url("src/assets/down-chevron.svg") no-repeat center center;
+  rotate: 90deg;
 }
 
 .Container #r_arrow {
@@ -38,6 +48,10 @@ h1, h2 {
   right: 0;
   margin: 5%;
   z-index: 1;
+  width: 64px;
+  height: 64px;
+  background: url("src/assets/down-chevron.svg") no-repeat center center;
+  rotate: -90deg;
 }
 
 .Images {
@@ -48,18 +62,26 @@ h1, h2 {
   scroll-behavior: smooth;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  background-color: pink;
+  background-color: #202128 ;
 }
 
+hr
+{
+  position: absolute;
+  width: 1198px;
+  top: 92%;
+  border: 2px solid rgb(233, 228, 228);
+}
+/* 
 .Images::after{
-  background-color: black;
+  background-color: rgb(233, 228, 228);
   position: absolute;
   content: '';
   width: 1200px;
   height: 4px;
   margin-top: 222px;
   bottom: 30%;
-}
+} */
 
 .Images::-webkit-scrollbar {
   display: none;
@@ -77,13 +99,23 @@ h1, h2 {
 
 .Images .Card .Img {
   max-width: 400px;
+  max-height: 300px;
+  margin-right: 60px;
+  filter: drop-shadow(-10px 10px 3px #1b1a21);
+}
+
+.Images .Card .ImageContainer{
+  min-width: 500px;
 }
 
 .Images .Card .Description {
   margin: 25px;
   min-width: 250px;
-  max-width: 25%;
+  max-width: 28%;
   text-align:inherit;
+  padding: 15px;
+  background-color: #24292e;
+  border: 2px solid rgb(233, 228, 228);  
 }
 
 .Images .Card .Date{
@@ -96,17 +128,20 @@ h1, h2 {
     position: absolute;
     width: 30px;
     padding-top: 10px;
-    top: 50%;
+    top: 100%;
+    z-index: 1;
 }
 
 .Images .Card .Date p1{
+  position: relative;
+  font-weight: 500;
   z-index: 1;
 }
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 450;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -135,12 +170,11 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  animation: movingButton .5s;
 }
 
 
